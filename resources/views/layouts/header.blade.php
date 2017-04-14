@@ -29,7 +29,7 @@
 			<input type="text" class="form-control" name="full_name" placeholder="full name"><br>
 			<input type="email" class="form-control" name="email" placeholder="email"><br>
 			<input type="password" class="form-control" name="password" placeholder="password"><br>					
-			<button class="btn btn-md btn-primary fl">register</button>
+			<button class="btn btn-lg btn-primary fl">register</button>
 
 		</form>
 	</div>
