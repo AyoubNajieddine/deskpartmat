@@ -1,0 +1,51 @@
+#header {
+	height:50px;
+	background-color:#006CC9;
+	padding-left:16px;
+	padding-right:16px;
+	padding-top:6px;
+}
+#logo img {
+	width:150px;
+	margin-top:5px;
+}
+#sideButtons .btn-success {	
+	font-weight:bold;
+}
+#sideButtons .btn-default {
+	color:#006CC9;
+	font-weight:bold;
+}
+.frm {
+	display:none;
+	width:400px;
+	min-height:250px;
+	background-color:white;
+	top:60px;
+	position:fixed;
+	left:35%;
+	padding:20px 40px;
+	z-index:1002;
+	border-radius:3px;
+}
+.frm form {
+	padding-top:20px;
+}
+.null {
+	position:absolute;
+	width:100%;
+	height:100%;
+	top:0;
+	left:0;
+	opacity:0.4;
+	background-color:black;
+	z-index:1001;
+}
+.frm .pull-right {
+	font-size:15px;
+}
+#header h3 {
+	margin:0;
+	font-weight:bold;
+	font-size:20px;
+}
