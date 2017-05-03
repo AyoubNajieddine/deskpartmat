@@ -14,3 +14,12 @@
 Route::get('/', function () {
     return view('home');
 });
+Route::post("/register","userCont@register");
+Route::post("/login",  "userCont@login");
+Route::get("/logout", "userCont@logout");
+Route::group(["middleware" => "auth"], function(){
+	Route::post("/nm", "userCont@updName");
+	Route::post("/eml", "userCont@updEmail");	
+	Route::post("/pwd", "userCont@updPassword"); 
+	Route::get("/delcnt", "userCont@delUser");
+});

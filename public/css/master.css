@@ -4,3 +4,12 @@
 .inp {
 	background-color:#006CC9;
 }
+.hideElem {
+	display:none;
+}
+.showElem {
+	display:auto;
+}
+#wrapper {
+	width:1000px;
+}

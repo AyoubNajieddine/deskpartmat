@@ -1,9 +1,13 @@
 #header {
 	height:50px;
-	background-color:#006CC9;
+	background-color:#006cc9;
 	padding-left:16px;
 	padding-right:16px;
 	padding-top:6px;
+	min-width:1024px;
+}
+.form-control {
+	height:40px;
 }
 #logo img {
 	width:150px;
@@ -18,7 +22,7 @@
 }
 .frm {
 	display:none;
-	width:400px;
+	width:480px;
 	min-height:250px;
 	background-color:white;
 	top:60px;
@@ -27,9 +31,6 @@
 	padding:20px 40px;
 	z-index:1002;
 	border-radius:3px;
-}
-.frm form {
-	padding-top:20px;
 }
 .null {
 	position:absolute;
@@ -44,8 +45,73 @@
 .frm .pull-right {
 	font-size:15px;
 }
+#sideButtons .btn-default {
+	background-color:#006cc9;
+	color:white;
+	font-weight:bold;
+	border:2px solid white;
+}
+#sideButtons .btn {
+	margin-left:10px;
+}
 #header h3 {
 	margin:0;
 	font-weight:bold;
 	font-size:20px;
+}
+#fbcon {
+	height:60px;
+	background-color:white;
+	border:1px solid #3B5998;
+}
+#gmcon {
+	height:60px;
+	border:1px solid #C93A2A;
+	background-color:white;
+}
+#header table td {
+	padding:5px;
+}
+#menuDrop {
+	position:absolute;
+	width:150px;
+	background-color:#005fb3;
+	height:0px;
+	right:5px;
+	top:62px;
+	transition:height 0.5s;
+	//overflow:hidden;
+	border-radius:3px;
+	box-shadow:0px 1px 8px black;		
+}
+.shmnu {
+	height:200px !important;
+}
+#menuDrop a {
+	color:white;
+}
+#menuDrop ul {
+	display:none;
+}
+#menuDrop li {
+	color:white;
+	list-style-type:none;
+	width:100%;
+	padding:6px 8px;
+	cursor:pointer;
+}
+#idArrow {
+	display:none;
+	width:0px;
+	height:0px;
+	position:absolute;
+	top:-19px;
+	right:17px;
+	background-color:transparent;
+	border:10px solid #005fb3;
+	border-top-color:transparent;
+	border-left-color:transparent;
+	border-right-color:transparent;
+	
+	
 }
