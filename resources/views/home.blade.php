@@ -1,10 +1,15 @@
+<link type="text/css" href="{{ URL::to('css/home.css') }}" rel="stylesheet">
+<script type="text/javascript" src="{{ URL::to('js/home.js') }}"></script>
 @extends("layouts.master")
 
-
 @section("content")
-	<div class="col-md-6">
+	<div id="sideRtHome" class="pull-right">
+	<div class="searchCls">
 		<!-- Search Division -->
-			<div style="display:none;">
+			<span class="glyphicon glyphicon-search"></span><span> Search For Houses</span><br>
+			<small>all Citiies, Houses Lands,Cars</small><br><br>
+
+			
 			<form action="search" >
 				  <div class="form-group">
 					<select name="ret_city" class="form-control">
@@ -32,14 +37,22 @@
 				  </div>
 			<button class="btn btn-md btn-info"><span class="glyphicon glyphicon-search"></span> {{ trans('home.search') }}</button>
 			</form>
-			</div>
-		<!-- Add Partma -->
-			<div></div>
-		<!-- Latest Partmat -->
-			<div></div>
-			
 	</div>
-	<div class="col-md-6">
-			<!-- Images of Some cities -->
+	<div class="infos">
+		<div class="infoBox">	
+			<span style="background-color:#cce1ff;" class="infoImgSpn glyphicon glyphicon-info-sign ">
+			</span>
+		</div>
+		<div class="infoBox">
+			<img src="http://www.ciperfect.com/images/carte.png"  style="background-color:#537bb4;" class="infoImg" />
+		</div>
+		<div class="infoBox">
+			<span style="background-color:#96d99d;" class="infoImgSpn glyphicon glyphicon-search ">
+			</span>
+		</div>
+	</div>
+	</div>
+	<div class="pull-left" id="sideLtHome">
+		
 	</div>
 @endsection

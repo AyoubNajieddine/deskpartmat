@@ -3,5 +3,6 @@ return array(
 	"name_lb" => "الإسم كامل",
 	"email_lb" => "البريد الإلكتروني",
 	"password_lb" => "كلمة المرور",
-	"register_btn" => "التسجيل"
+	"register_btn" => "التسجيل",
+	"newaccount" => "فتح حساب جديد",
 	);

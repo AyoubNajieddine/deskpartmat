@@ -1,3 +1,7 @@
+@import url(http://fonts.googleapis.com/earlyaccess/droidarabickufi.css); 
+body {
+	font-family: 'Droid Arabic Kufi', sans-serif; 
+}
 .fl {
 	width:100%;
 }
@@ -11,5 +15,8 @@
 	display:auto;
 }
 #wrapper {
-	width:1000px;
+	width:1300px;
+	min-width:1300px;
+	margin:auto;
+	margin-top:50px;
 }

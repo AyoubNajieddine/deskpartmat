@@ -1,0 +1,40 @@
+.searchcls {
+	background-color:#006cc9;
+	padding:12px;
+	border-radius:3px;
+	color:white;
+	font-size:26px;
+}
+.searchcls small {
+	color:white;
+	font-size:14px;
+}
+#sideRtHome {
+	width:40%;	
+}
+#sideLtHome {
+	width:55%;
+	margin-right:5%;
+}
+.infos {
+	margin-top:10px;
+}
+.infoBox {
+	border-bottom:1px dotted #a7a7a7;
+	padding:10px 0;	
+}
+.infoImg {
+    padding: 5px;
+    border-radius: 100px;
+    height: 78px;
+    width: 78px;
+}
+.infoImgSpn {
+    border-radius: 100px;
+    font-size: 30px;
+    color: white;
+    padding: 25px;
+    text-align: center;
+
+}
+

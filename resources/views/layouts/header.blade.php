@@ -4,25 +4,25 @@
 	<div id="logo" class="pull-left"><img src="http://q-ec.bstatic.com/static/img/b26logo/booking_logo_retina/22615963add19ac6b6d715a97c8d477e8b95b7ea.png">
 	</div>	
 		<!-- Panel side contains login and register -->
-	<div id="sideButtons" class="pull-right">
-		<a class="btn btn-md btn-success" href="/new">Post here</a>
+	<div id="sideButtons" class="pull-right" dir="rtl">
 		@if(Auth::check() == false)
-		<a class="btn btn-md btn-default " href="register">Register</a>
-		<a class="btn btn-md btn-default" href="login"><span class="glyphicon glyphicon-user"></span> Login</a>
+		<a class="btn btn-md btn-default" href="login"><span class="glyphicon glyphicon-user"> </span> {{ trans("login.btn_login") }}</a>
+		<a class="btn btn-md btn-default " href="register">{{ trans("register.register_btn") }}</a>
 		@else
 		<a class="btn btn-md btn-default" id="menuBtn"><span class="glyphicon glyphicon-menu-hamburger"></span></a>
 		<div id="menuDrop">
 			<div id="idArrow"></div>
-			<ul>
-				<li><a href="/dashboard">my houses</a></li> <!-- myHouses -->
-				<li><a href="#sv">saved</a></li> <!-- SavedHouses -->
-				<li><a href="settings">Settings</a></li> <!-- Settings -->
-				<li><a href="#ctn">Contact Us</a></li> <!-- ContactUs -->
+			<ul style="padding-right:1px;">
+				<li><a href="/dashboard">{{ trans("header.myhouses") }}</a></li> <!-- myHouses -->
+				<li><a href="#sv">{{ trans("header.saved") }}</a></li> <!-- SavedHouses -->
+				<li><a href="settings">{{ trans("header.settings") }}</a></li> <!-- Settings -->
+				<li><a href="#ctn">{{ trans("header.cont_us") }}</a></li> <!-- ContactUs -->
 				<li><a href="#lan">Language</a></li> <!-- Language -->
-				<li><a href="/logout">Logout</a></li> <!-- Logout -->
+				<li><a href="/logout">{{ trans("header.logout") }}</a></li> <!-- Logout -->
 			</ul>
 		</div>
 		@endif
+		<a class="btn btn-md btn-success" href="/new">{{ trans("new.newret") }}</a>
 		
 	</div>
 
@@ -42,26 +42,27 @@
 		?>
 
 	@if(!Auth::user())
-	<div id="loginfrm" class="frm">
+	<div id="loginfrm" class="frm" dir="rtl">
 		<a class="pull-left"><span class="glyphicon glyphicon-remove-sign"></span></a>
-		<h3 class="pull-right">Login</h3>
+		<h3 class="pull-right">{{ trans("login.account") }}</h3>
 		<br><hr />
 		<div class="alert alert-danger hideElem">
 		</div>	
 		<form action="login" method="POST">
-			<label for="email">email</label>
+			<label for="email">{{ trans("login.user_holder") }}</label>
 			<input type="text" class="form-control" name="email" placeholder=""><br>
-			<label for="password">password</label>
-			<input type="password" class="form-control" name="password" placeholder=""><br>					
-			<a href="" type="btn btn-md btn-link">Forgot password ? </a><br><br>
-			<button class="btn btn-lg fl btn-primary">Login</button>
+			<label for="password">{{ trans("login.password_holder") }}</label>
+			<input type="password" class="form-control" name="password" placeholder=""><br>
+			<input type="checkbox" class="" name="remember"/>{{ trans("login.remember") }}<br><br>
+			<button class="btn btn-lg fl btn-primary">{{ trans("login.btn_login") }}</button><br><br>
+			<center><a href="" type="btn btn-md btn-link">{{ trans("login.forgot") }}</a></center>
 		</form>
 			<hr />
 			<table class="fl">
 			<tr><td>
-			<button class="btn btn-default" id="fbcon"><img src="{{ URL::to('icons/facebook.png') }}"> Connect with facebook</button>
+			<button class="btn btn-default" id="fbcon"><img src="{{ URL::to('icons/facebook.png') }}"> {{ trans("login.facebook_login") }}</button>
 			</td><td>
-			<button class="btn btn-default" id="gmcon"><img src="{{ URL::to('icons/search.png') }}"> Connect with Google</button>
+			<button class="btn btn-default" id="gmcon"><img src="{{ URL::to('icons/search.png') }}"> {{ trans("login.google_login") }}</button>
 			</td></tr>
 			</table>			
 	</div>
@@ -80,27 +81,27 @@
 		*/
 		?>
 
-	<div id="registerfrm" class="frm">	
+	<div id="registerfrm" class="frm" dir="rtl">	
 		<a class="pull-left"><span class="glyphicon glyphicon-remove-sign"></span></a>
-		<h3 class="pull-right">Register</h3>
+		<h3 class="pull-right">{{ trans("register.newaccount") }}</h3>
 		<br><hr />
 		<div class="alert alert-danger hideElem">
 		</div>	
 		<form action="register" method="POST">
-			<label>Full name</label>
+			<label>{{ trans("register.name_lb") }}</label>
 			<input type="text" class="form-control" id="regname" name="full_name" ><br>
-			<label>email</label>
+			<label>{{ trans("register.email_lb") }} </label>
 			<input type="email" class="form-control" name="email" id="regemail" ><br>
-			<label>password</label>
+			<label>{{ trans("register.password_lb") }}</label>
 			<input type="password" class="form-control" name="password" id="regpassword" ><br>					
-			<button class="btn btn-lg btn-primary fl">register</button>
+			<button class="btn btn-lg btn-primary fl">{{ trans("login.btn_register") }}</button>
 
 		</form><hr />
 			<table class="fl">
 			<tr><td>
-			<button class="btn btn-default" id="fbcon"><img src="{{ URL::to('icons/facebook.png') }}"> Connect with facebook</button>
+			<button class="btn btn-default" id="fbcon"><img src="{{ URL::to('icons/facebook.png') }}"> {{ trans("login.facebook_login") }}</button>
 			</td><td>
-			<button class="btn btn-default" id="gmcon"><img src="{{ URL::to('icons/search.png') }}"> Connect with Google</button>
+			<button class="btn btn-default" id="gmcon"><img src="{{ URL::to('icons/search.png') }}"> {{ trans("login.google_login") }}</button>
 			</td></tr>
 			</table>			
 	</div>
@@ -121,7 +122,7 @@
 	<div id="settings" class="frm" dir='rtl'>
 		
 		<a class="pull-left"><span class="glyphicon glyphicon-remove-sign"></span></a>
-		<h3 class="pull-right">Settings</h3>
+		<h3 class="pull-right">{{ trans("header.settings") }}</h3>
 		<br><hr />
 		<div class="alert alert-danger hideElem">
 		</div>	
