@@ -151,7 +151,8 @@ class retailCont extends Controller
 		$infos = retail::where("id", $id)->first();
 		// we need to get the pictures
 		$pics = $infos->pics;
-		return View("retail.info")->with(["infos"=>$infos,"pics"=>$pics]);
+		$userInfo = user::where("id", $infos->user_id)->first();
+		return View("retail.info")->with(["infos"=>$infos,"pics"=>$pics, "userInfo" => $userInfo]);
 	}
 	
 }

@@ -10,11 +10,11 @@
 	font-size:14px;
 }
 #sideRtHome {
-	width:40%;	
+	width:47%;	
 }
 #sideLtHome {
-	width:55%;
-	margin-right:5%;
+	width:50%;
+	margin-right:3%;
 }
 .infos {
 	margin-top:10px;
@@ -22,7 +22,18 @@
 .infoBox {
 	border-bottom:1px dotted #a7a7a7;
 	padding:10px 0;	
+	overflow:auto;
 }
+.infoBox h4 {
+	color:#003580;
+	font-weight:bold;
+	margin-right:30px; 
+	margin-top:28px;
+}
+.infoBox small {
+	line-height:200%;
+}
+
 .infoImg {
     padding: 5px;
     border-radius: 100px;
@@ -35,6 +46,44 @@
     color: white;
     padding: 25px;
     text-align: center;
-
 }
-
+.imgExp {
+	position:relative;
+	border-radius:4px;
+	margin-bottom:10px;
+	height:250px;
+	cursor:pointer;	
+}
+.imgExp img{
+	height:100%;
+	width:100%;
+	border-radius:4px;
+}
+.imgExp h1 {
+	position:absolute;
+	color:white;
+	font-weight:bold;
+	right:20px;
+	bottom:5px;	
+}
+.imgExp small {
+	color:white;
+}
+#subBox {
+	background-color:#fde29d;
+	padding:10px;
+	margin-top:10px;
+	border-radius:3px;
+}
+#subBox input {
+	display:inline-block !important;
+	width:60%;	
+}
+#subBox form {
+	margin-bottom:0px;
+}
+#subBox h3 {
+	margin:0;
+	margin-bottom:8px; 
+	color:#286090;
+}

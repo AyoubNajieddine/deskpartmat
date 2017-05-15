@@ -1,0 +1,72 @@
+#sideRtSearch {
+	width:40%;	
+}
+#sideLtSearch {
+	width:57%;
+	margin-right:3%;
+}
+.searchcls {
+	background-color:#006cc9;
+	padding:12px;
+	border-radius:3px;
+	color:white;
+	font-size:26px;
+}
+.searchcls small {
+	color:white;
+	font-size:14px;
+}
+.imgSide {
+	width:100px;
+	height:100px;
+	margin-left:18px;
+	border-radius:3px;
+}
+.retailElem {
+	padding:8px;
+	overflow:auto;
+	cursor:pointer;
+}
+.retailElem span {
+	color:#006cc9;
+}
+.retailElem:hover {
+	background-color:#E7F0FA;
+}
+.priceInfo {
+	position:relative;
+}
+.priceAmount {
+	color:green !important;
+	font-size:19px;
+	font-weight:bold;
+}
+.typerent {
+	font-size:18px;
+}
+.addInfoBox strong {
+	color:black;
+	margin-left:10px;
+}
+#advancedSearch .panel-heading {
+	background-color:#006cc9;
+	color:white;
+	font-weight:bold;
+}
+#advancedSearch .panel {
+	margin-top:10px;
+	border:solid 2px #006cc9;
+	border-radius:6px;
+}
+#advancedSearch .panel a {
+	color:#003580;
+	font-weight:bold;
+	
+}
+#advancedSearch li {
+	list-style:none;
+}
+#advancedSearch ul {
+	padding:0px;
+	
+}

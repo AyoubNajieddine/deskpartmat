@@ -12,11 +12,14 @@
 */
 
 Route::get('/', function () {
-    return view('home');
+    $cities = App\city::all();
+    return view('home')->with(["cities" => $cities]);
 });
 Route::post("/register","userCont@register");
 Route::post("/login",  "userCont@login");
 Route::get("/logout", "userCont@logout");
+Route::get("/search/{city}/{type}/{rent}", "SearchCont@search");
+Route::get("/info/{id}", "retailCont@getRetailInfo");
 Route::group(["middleware" => "auth"], function(){
 	Route::post("/nm", "userCont@updName");
 	Route::post("/eml", "userCont@updEmail");	
