@@ -1,16 +1,17 @@
+
+<link type="text/css" href="{{ URL::to('css/info.css') }}" rel="stylesheet">
 @extends("layouts.master")
 
 @section("content")
-<?php  use App\RetailInfo as retail ?>
-<link type="text/css" href="{{ URL::to('css/info.css') }}" rel="stylesheet">
 <script src="{{ URL::to('js/info.js') }}" type="text/javascript"></script>
+<?php  use App\RetailInfo as retail; ?>
 		<div id="infoBoxDiv">
 			<div id="headRet">
 			<h2 class="pull-right">{{ $infos->adresse_retail }}</h2>
 			<div class="pull-left">
-			<button class="btn btn-primary"><spanclass="glyphicon glyphicon-share"></span> Partager</button>	
-			<button class="btn btn-link"><span class="glyphicon glyphicon-print"></span> Imprimer</button>
-			<button class="btn btn-link"><span class="glyphicon glyphicon-pushpin"></span> Save</button>
+			<button class="btn btn-primary"><spanclass="glyphicon glyphicon-share"></span> {{ trans("info.partager") }}</button>	
+			<button class="btn btn-link"><span class="glyphicon glyphicon-print"></span> {{ trans("info.imprimer") }}</button>
+			<button class="btn btn-link"><span class="glyphicon glyphicon-pushpin"></span> {{ trans("info.save") }}</button>
 			</div>
 			</div>
 			<hr />
@@ -26,7 +27,7 @@
 				</div>
 					<div id="PicsListSel">
 					@foreach($pics as $pic)
-						<img class="flowImg" src="/thumbs/{{ $pic->picture_name}}">
+						<img class="flowImg pull-left" src="/thumbs/{{ $pic->picture_name}}">
 					@endforeach
 					</div>
 				@else 
@@ -52,15 +53,15 @@
 				</div>
 			<hr />
 						<div id="randRet">
-					<h1>Recommende pour vous</h1>
+					<h1>{{ trans("info.recyou") }}</h1>
 					<?php $data = retail::limit(4)->orderBy(DB::raw('rand()'))->get(); ?>
 						@foreach($data as $retail)
 						<div class="randRetLst panel panel-default pull-right">
 						<div class="panel-body">
 				<center><img src="@if(count($retail->pics) > 0) /thumbs/{{ ($retail->pics)[0]->picture_name }} @else /icons/home.png @endif" class="imgRand"/></center>
 						<hr />
-						<h3><strong>{{ $retail->price }}</strong></h3>
-						<span>{{ $retail->type }},{{ $retail->rent }},{{ $retail->city_id }},{{ $retail->surface }} ...</span><br>
+						<h4><strong>{{ $retail->price }} {{ trans("new.currency") }}</strong></h4>
+						<span>{{ trans("new.".$infos->type) }},{{trans("dashboard.".$infos->rent."_rt") }},{{ trans("cities.".$infos->city_id) }},{{ $retail->surface }} ...</span><br>
 						<a href="/info/{{ $retail->id }}">More</a>
 						</div>
 						</div>
@@ -71,11 +72,12 @@
 
 				<div id="cntDetail">
 					<div class="panel panel-default">
-					<div class="panel-heading">Contact Info</div>
+					<div class="panel-heading">{{ trans("info.cntInfo") }}</div>
 					<div class="panel-body">
-					<h2 align="center" style="color:#006cc9;"><strong>{{ $infos->price }} DH</strong></h2>	
-					<button class="btn btn-lg btn-success fl" style="margin-bottom:10px;">Call Number</button>
-					<button class="btn btn-lg btn-link fl">Send Message</button>
+					<h2 align="center" style="color:#006cc9;"><strong>{{ $infos->price }} {{ trans("new.currency") }}</strong></h2><hr />	
+					<button class="btn btn-lg btn-success fl" style="margin-bottom:10px;">{{ trans("new.call")}}</button>
+					<button class="btn btn-lg btn-link fl" style="margin-bottom:10px;">{{ trans("info.sendM") }}</button><br>
+					<center><a class="fl">{{ trans("info.reportRet") }}</a></center>
 					</div>
 					</div>
 				</div>
@@ -88,11 +90,11 @@
 					Date Post
 						 -->
 						<div class="panel-body">
+							<span class="glyphicon glyphicon-calendar"></span> {{ $infos->created_at }}<br>
 							@if($count > 0)
-								Number Of retails are {{ $count }}<br>
-								<a>user other retails</a><br>
+								 {{ trans("info.cntRet") }} {{ $count }}<br>
+								<a>{{ trans("info.otherRet") }}</a><br>
 							@endif
-							date Of post {{ $infos->created_at}}
 							
 						</div>	
 					</div>

@@ -1,4 +1,4 @@
-	sortElements();	
+sortElements();	
 function sortElements(){
 	search = document.location.search.substring(1).split("&");
 	for(i = 0 ; i < search.length; i++){

@@ -147,13 +147,15 @@ function emptySetInputs(){
 }
 function settingsToggle(){
 	elements = $(".mnuElem");
+	if(elements.length > 0){
 	data = document.getElementById("mnuSet").getElementsByTagName("tr");
+			
 	$(data[3]).click(function(){
 		// delete view
 		hideSettingsBox();
 		$("#delcnt").removeClass("hideElem");
-	});
-	$(data[0]).click(function(){
+	});		
+	$(data[0]).click(function(){			
 		// get the data from ajax // EMAIL CHANGE
 		hideSettingsBox();
 		$("#updemail").removeClass("hideElem");
@@ -169,6 +171,7 @@ function settingsToggle(){
 		$("#updname").removeClass("hideElem");
 
 	});
+	}
 	$('a[href=upd]').click(function(event){
 		event.preventDefault();
 		hideSettingsBox();
