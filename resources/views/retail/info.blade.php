@@ -1,13 +1,14 @@
 @extends("layouts.master")
 
 @section("content")
+<?php  use App\RetailInfo as retail ?>
 <link type="text/css" href="{{ URL::to('css/info.css') }}" rel="stylesheet">
 <script src="{{ URL::to('js/info.js') }}" type="text/javascript"></script>
 		<div id="infoBoxDiv">
 			<div id="headRet">
 			<h2 class="pull-right">{{ $infos->adresse_retail }}</h2>
 			<div class="pull-left">
-			<button class="btn btn-primary"><span class="glyphicon glyphicon-share"></span> Partager</button>	
+			<button class="btn btn-primary"><spanclass="glyphicon glyphicon-share"></span> Partager</button>	
 			<button class="btn btn-link"><span class="glyphicon glyphicon-print"></span> Imprimer</button>
 			<button class="btn btn-link"><span class="glyphicon glyphicon-pushpin"></span> Save</button>
 			</div>
@@ -15,21 +16,24 @@
 			<hr />
 			<div id="SideLeft" class="pull-left">
 			<div id="imgList">
-				<center>
-				<!-- span class="glyphicon glyphicon-menu-right"></span -->
-				<img id="mainImg" src="/thumbs/{{ $pics[0]->picture_name }}">
-				<!-- span class="glyphicon glyphicon-menu-left"></span -->
-				</center>
 				@if($pics->count() > 0)
+				<div id="mainImgDiv">
+				<center>
+				<span class="glyphicon glyphicon-menu-right"></span >
+				<img id="mainImg" src="/thumbs/{{ $pics[0]->picture_name }}">
+				<span class="glyphicon glyphicon-menu-left"></span >
+				</center>
+				</div>
 					<div id="PicsListSel">
 					@foreach($pics as $pic)
 						<img class="flowImg" src="/thumbs/{{ $pic->picture_name}}">
 					@endforeach
 					</div>
 				@else 
-
+					<div class="panel panel-default"><div class="panel-body">There is no pictures</div></div>
 				@endif
-			</div>		
+			</div>	
+			<hr />	
 				<div id="partmaDetail">
 				
 		<table class="table panel panel-default pull-right" id="mainInfo" dir="rtl">
@@ -46,6 +50,22 @@
 				</div>
 				</div>
 				</div>
+			<hr />
+						<div id="randRet">
+					<h1>Recommende pour vous</h1>
+					<?php $data = retail::limit(4)->orderBy(DB::raw('rand()'))->get(); ?>
+						@foreach($data as $retail)
+						<div class="randRetLst panel panel-default pull-right">
+						<div class="panel-body">
+				<center><img src="@if(count($retail->pics) > 0) /thumbs/{{ ($retail->pics)[0]->picture_name }} @else /icons/home.png @endif" class="imgRand"/></center>
+						<hr />
+						<h3><strong>{{ $retail->price }}</strong></h3>
+						<span>{{ $retail->type }},{{ $retail->rent }},{{ $retail->city_id }},{{ $retail->surface }} ...</span><br>
+						<a href="/info/{{ $retail->id }}">More</a>
+						</div>
+						</div>
+						@endforeach
+						</div>		
 			</div>
 			<div id="SideRight" class="pull-right">
 

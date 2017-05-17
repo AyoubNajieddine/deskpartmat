@@ -51,7 +51,44 @@
 #partmaDetail {
 	overflow:auto;
 }
+#mainInfo th{
+	text-align:right;
+}
 .imgRand {
-	width:50px;
-	height:50px;
+	width:140px;
+	height:140px;
+}
+.randRetLst {
+	width:24%;
+	margin-right:1%;
+	cursor:pointer;
+}
+.randRetLst:hover {
+	background-color:#E7F0FA;
+}
+.randRetLst h3 {
+	color:#006cc9;
+}
+
+/*Main Img*/
+#mainImgDiv {
+	position:relative;
+}
+#mainImgDiv span {
+	position:absolute;
+	padding:10px;
+	top:45%;
+	background-color:black;
+	opacity:0.5;
+	border-radius:3px;
+}
+#mainImgDiv .glyphicon-menu-right {
+	right:5px;
+	color:white;
+	font-weight:bold;
+}
+#mainImgDiv .glyphicon-menu-left {
+	left:5px;
+	color:white;
+	font-weight:bold;
 }
