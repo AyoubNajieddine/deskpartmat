@@ -60,7 +60,7 @@
 				</div>
 			</div>
 	</div>
-	<div id="sideLtSearch" class="pull-left">	
+	<div id="sideLtSearch" style="" class="pull-left">	
 	   @if($data->total() >  0 && $data->currentPage() <= $data->total())
 	<div id="searchData">
 		@foreach($data as $retail)

@@ -15,7 +15,7 @@
 			</div>
 			</div>
 			<hr />
-			<div id="SideLeft" class="pull-left">
+			<div id="SideLeft" style="background-color:white;padding:10px;" class="pull-left">
 			<div id="imgList">
 				@if($pics->count() > 0)
 				<div id="mainImgDiv">
@@ -68,7 +68,7 @@
 						@endforeach
 						</div>		
 			</div>
-			<div id="SideRight" class="pull-right">
+			<div id="SideRight"  class="pull-right">
 
 				<div id="cntDetail">
 					<div class="panel panel-default">

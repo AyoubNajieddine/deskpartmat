@@ -1,6 +1,7 @@
 @import url(http://fonts.googleapis.com/earlyaccess/droidarabickufi.css); 
 body {
 	font-family: 'Droid Arabic Kufi', sans-serif; 
+	background:url(https://ir.ebaystatic.com/pictures/aw/pics/cmp/ds3/imgbg.jpg) repeat 0 0 #f8f8f8;
 }
 .fl {
 	width:100%;
@@ -19,4 +20,7 @@ body {
 	min-width:1100px;
 	margin:auto;
 	margin-top:50px;
+}
+select {
+	height:40px !important;
 }

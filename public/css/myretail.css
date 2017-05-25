@@ -1,0 +1,33 @@
+#sideLtRet {
+	width:62%;
+}
+#sideRtRet {
+	width:35%;
+	margin-left:2%;
+}
+.partmat_data td {
+	padding:4px;
+}
+.imgSd {
+	padding:5px;
+	border:1px solid transparent;
+	border-color:#ddd;
+	width:50px;
+	height:50px;
+	border-radius:3px;
+	margin-left:5px;
+}
+#sideLtRet a.fl {
+	font-size:12px;
+}
+#sideLtRet table {
+	margin-top:-5px;
+} 
+#msgBox {
+	font-size:15px;
+}
+#delretfrm h3 {
+	margin:0;
+	font-weight:bold;
+	font-size:20px;
+}

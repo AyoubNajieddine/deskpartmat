@@ -25,4 +25,15 @@ Route::group(["middleware" => "auth"], function(){
 	Route::post("/eml", "userCont@updEmail");	
 	Route::post("/pwd", "userCont@updPassword"); 
 	Route::get("/delcnt", "userCont@delUser");
+	Route::get("/list", "retailCont@listMyRetail");
+	Route::get("/new", function(){
+		$cities = App\city::all();
+		return view("retail.new")->with(["cities"=>$cities]); 
+	});
+	Route::get("/new/frm/{tp}", function($tp){	
+			return view("retail.frmdyn")->with(["tp"=>$tp]);
+	});
+	Route::post("/delret", "retailCont@delRetail");
+	Route::get("/updret/{id}", "retailCont@updrtl");
 });
+

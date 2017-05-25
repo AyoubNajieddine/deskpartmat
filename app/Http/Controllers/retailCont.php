@@ -54,8 +54,10 @@ class retailCont extends Controller
 	function updRetail(Request $req){
 
 	}
-	function delRetail($id){
-		
+	function delRetail(Request $req){
+		// deleting retail
+		$id = $req->id; // getting the id
+		retail::destroy(["id"=> $id]);	
 	}
 	function viewRetail(){
 		
@@ -85,35 +87,37 @@ class retailCont extends Controller
 			//return dd($obj);
 			return view("retail.partmat")->with(["objArray" => $objArray]);	
 	}
-	function listMyRetail($num){
-		$user = (Auth::user());
-		$id = $user->id;
-		$sqlRetail = "SELECT *,DATE_FORMAT(created_at,'%d-%m-%Y') as dt FROM retail_infos WHERE user_id = ".$id." LIMIT ".$num.",".($num+5);
-		$cityRetail = "SELECT name_ar FROM cities WHERE id=";
-		$picsRetail = "SELECT picture_name FROM  pictures WHERE retail_info_id = ";
-		$objArray;
-		$retail  = DB::select($sqlRetail);
-		for($i = 0 ; $i < sizeof($retail) ; $i++){
-			$obj = new \stdClass;
-			//$obj->address = $retail[0]->adresse_retail;
-			//$obj->zipcode = $retail[0]->zipcode;
-			$obj->id = $retail[$i]->id;
-			$obj->rent = $retail[$i]->rent."_rt";
-			$obj->price = $retail[$i]->price;
-			$obj->type = $retail[$i]->type;	
-			$obj->dt = $retail[$i]->dt;
+	function listMyRetail(){
+		//$id = $user->id;
+		//$sqlRetail = "SELECT *,DATE_FORMAT(created_at,'%d-%m-%Y') as dt FROM retail_infos WHERE user_id = ".$id." LIMIT ".$num.",".($num+5);
+		//$cityRetail = "SELECT name_ar FROM cities WHERE id=";
+		//$picsRetail = "SELECT picture_name FROM  pictures WHERE retail_info_id = ";
+		//$objArray;
+		//$retail  = DB::select($sqlRetail);
+		//for($i = 0 ; $i < sizeof($retail) ; $i++){
+		//	$obj = new \stdClass;
+		//	//$obj->address = $retail[0]->adresse_retail;
+		//	//$obj->zipcode = $retail[0]->zipcode;
+		//	$obj->id = $retail[$i]->id;
+		//	$obj->rent = $retail[$i]->rent."_rt";
+		//	$obj->price = $retail[$i]->price;
+		//	$obj->type = $retail[$i]->type;	
+		//	$obj->dt = $retail[$i]->dt;
 			//$obj->phone = $retail[0]->phone;
 			//$obj->surface = $retail[0]->surface;
-			$obj->city = DB::select($cityRetail.$retail[$i]->city_id)[0]->name_ar;
-			$obj->pics = DB::select($picsRetail.$retail[$i]->id." LIMIT 0,1")[0]->picture_name;
+		//	$obj->city = DB::select($cityRetail.$retail[$i]->city_id)[0]->name_ar;
+		//	$obj->pics = DB::select($picsRetail.$retail[$i]->id." LIMIT 0,1")[0]->picture_name;
 				//if($cityRetail->furn != null)
 				//if($cityRetail->balc != null)
 				//if($cityRetail->gar != null)
 			
-			$objArray[$i] = $obj;
-		}
-			return view("retail.list")->with(["objArray" => $objArray]);
-		
+		//	$objArray[$i] = $obj;
+		//}
+		//	return view("retail.list")->with(["objArray" => $objArray]);
+		$user = (Auth::user());
+		$retails = $user->retails()->orderBy('created_at', 'DESC');
+		$data = $retails->paginate(10);
+		return view("retail.myretail")->with(["data" => $data]);
 		
 	}
 	function updrtl($id){
