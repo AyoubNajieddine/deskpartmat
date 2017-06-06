@@ -9,7 +9,7 @@
 			<div id="headRet">
 			<h2 class="pull-right">{{ $infos->adresse_retail }}</h2>
 			<div class="pull-left">
-			<button class="btn btn-primary"><spanclass="glyphicon glyphicon-share"></span> {{ trans("info.partager") }}</button>	
+			<button class="btn btn-primary"><span class="glyphicon glyphicon-share"></span> {{ trans("info.partager") }}</button>	
 			<button class="btn btn-link"><span class="glyphicon glyphicon-print"></span> {{ trans("info.imprimer") }}</button>
 			<button class="btn btn-link"><span class="glyphicon glyphicon-pushpin"></span> {{ trans("info.save") }}</button>
 			</div>

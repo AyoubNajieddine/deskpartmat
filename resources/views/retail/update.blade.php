@@ -1,22 +1,25 @@
 @extends("layouts.master")
+
 @section("content")
-<script type="text/javascript" src="{{ URL::to('/js/master.js') }}"></script>
+<link href="/css/update.css" type="text/css" rel="stylesheet" >
 <script src="/js/update.js"></script>
-	<center>
-	<div id="updpartma" style="width:500px;margin-bottom:50px;background-color:white;">
-		  <div id="updpartma_menu">
+	<div id="headUpd" style="overflow:auto;">	
+	<a class="btn btn-md pull-left" style="">Back<span class="glyphicon glyphicon-chevron-left"></span></a>
+	</div>
+	<div id="sideRight" class="pull-right">
+		  <div id="updpartma_menu" style="background-color:white;">
 			<table class="table table-bordered">
 				<tr>
 					<td style="position:relative;">	
 				<a  data="#rent" class="edit_opt"></a>
-						<h4>{{ trans("dashboard.retail") }} {{ trans("dashboard.".$retail->rent."_rt") }}</h4>
+						<h5>{{ trans("dashboard.retail") }} {{ trans("dashboard.".$retail->rent."_rt") }}</h5>
 					<a href="#" class="glyphicon glyphicon-chevron-left chev_link"></a>
 					</td>
 				</tr>
 				<tr>
 					<td style="position:relative;">
 				<a  data="#type" class="edit_opt"></a>
-			<h4>{{ trans("new.type") }}<br><small>{{ trans("new.".$retail->type) }}</small></h4>	
+			<h5>{{ trans("new.type") }}<br><small>{{ trans("new.".$retail->type) }}</small></h5>	
 
 					<a href="#" class="glyphicon glyphicon-chevron-left chev_link"></a>
 					</td>
@@ -24,7 +27,7 @@
 				<tr>
 					<td style="position:relative;">
 				<a  data="#address" class="edit_opt"></a>
-			<h4>{{ trans("new.address") }}<br><small>{{ $retail->adresse_retail }}</small></h4>
+			<h5>{{ trans("new.address") }}<br><small>{{ $retail->adresse_retail }}</small></h5>
 
 					<a href="#" class="glyphicon glyphicon-chevron-left chev_link"></a>
 					</td>
@@ -32,7 +35,7 @@
 				<tr>
 					<td style="position:relative;">
 				<a  data="#price" class="edit_opt"></a>
-			<h4>{{ trans("new.price") }}<br><small>{{ $retail->price }} {{ trans("new.currency")}}</small></h4>
+			<h5>{{ trans("new.price") }}<br><small>{{ $retail->price }} {{ trans("new.currency")}}</small></h5>
 
 					<a href="#" class="glyphicon glyphicon-chevron-left chev_link"></a>
 					</td>
@@ -40,7 +43,7 @@
 				<tr>
 					<td style="position:relative;">
 				<a  data="#surface" class="edit_opt"></a>
-			<h4>{{ trans("new.surface") }}<br><small>{{ $retail->surface }} m²</small></h4>
+			<h5>{{ trans("new.surface") }}<br><small>{{ $retail->surface }} m²</small></h5>
 			
 					<a href="#" class="glyphicon glyphicon-chevron-left chev_link"></a>
 					</td>
@@ -49,7 +52,7 @@
 					<td style="position:relative;">
 				<a  data="#phone" class="edit_opt"></a>
 					<a href="#" class="glyphicon glyphicon-chevron-left chev_link"></a>
-			<h4>{{ trans("new.phone") }}<br><small>{{ $retail->phone }}</small></h4>
+			<h5>{{ trans("new.phone") }}<br><small>{{ $retail->phone }}</small></h5>
 				
 					<a href="#" class="glyphicon glyphicon-chevron-left chev_link"></a>
 					</td>
@@ -57,7 +60,7 @@
 				<tr>
 					<td style="position:relative;">	
 				<a  data="#city" class="edit_opt"></a>
-						<h4>{{ trans("new.city")}}<br><small>{{ $retail->city->name_ar}}</small></h4>	
+						<h5>{{ trans("new.city")}}<br><small>{{ $retail->city->name_ar}}</small></h5>	
 					<a href="#" class="glyphicon glyphicon-chevron-left chev_link"></a>
 					</td>
 				</tr>
@@ -79,7 +82,7 @@
 				<tr>
 					<td style="position:relative;">
 				<a  data="#nbrooms" class="edit_opt"></a>
-			<h4>{{ trans("new.piece") }}<br><small>{{ $retail->nbRooms }}</small></h4>
+			<h5>{{ trans("new.piece") }}<br><small>{{ $retail->nbRooms }}</small></h5>
 				
 					<a href="#" class="glyphicon glyphicon-chevron-left chev_link"></a>
 					</td>
@@ -89,7 +92,7 @@
 				<tr>
 					<td style="position:relative">	
 				<a  data="#pictures" class="edit_opt"></a>
-						<h4>{{ trans("dashboard.editpic")}}</h4>
+						<h5>{{ trans("dashboard.editpic")}}</h5>
 
 					<a href="#" class="glyphicon glyphicon-chevron-left chev_link"></a>
 					</td>
@@ -97,7 +100,7 @@
 				<tr>
 					<td style="position:relative">	
 				<a  data="#zipcode" class="edit_opt"></a>
-						<h4>{{ trans("new.zipcode")}}<br><small>{{ $retail->zipcode }}</small></h4>
+						<h5>{{ trans("new.zipcode")}}<br><small>{{ $retail->zipcode }}</small></h5>
 
 					<a href="#" class="glyphicon glyphicon-chevron-left chev_link"></a>
 					</td>
@@ -105,14 +108,7 @@
 						<tr>
 					<td style="position:relative">	
 				<a  data="#addinfo" class="edit_opt"></a>
-						<h4>{{ trans("new.info")}}<br><small>{{ $retail->info }}</small></h4>
-
-					<a href="#" class="glyphicon glyphicon-chevron-left chev_link"></a>
-					</td>
-				</tr>
-				<tr>
-					<td style="position:relative">	
-						<h4>{{ trans("new.location")}}</h4>
+						<h5>{{ trans("new.info")}}<br><small>{{ $retail->info }}</small></h5>
 
 					<a href="#" class="glyphicon glyphicon-chevron-left chev_link"></a>
 					</td>
@@ -120,30 +116,28 @@
 			
 			</table>
 		</div>
-			<!-- Update Partma -->
-		<div id="updpartma_data">
-				<!-- Error Box-->
+	</div>
+	<div id="sideLeft" class="pull-right" >
+		<!-- this gonna be dynamic -->	
+					
 			<div class="alert alert-danger" style="display:none;">
 				<ul></ul>
 			</div>
 					<!-- Address -->
-			 <div id="address" style="display:none;">
+			 <div id="address" class="disDiv">
 				<form action="update/address/{{ $id }}" method="POST">
 				   <div class="panel panel-default">
 						<div class="panel-heading" style="background-color:white;"><b>{{ trans("dashboard.edit") }} {{ trans("new.address") }}</b></div>
 						<div class="panel-body">
-					<input type="text" name="adresse_retail" class="form-control" placeholder="{{ trans('new.address') }}" /><br>
-					<center>
-					<button class="btn btn-primary btn-md inp ">{{ trans("updpwd.save") }}</button>
-					<a class="btn btn-default btn-md cancel" data="#address">{{ trans("updpwd.cancel") }}</a>
-					</center>
+					<input type="text" name="adresse_retail" class="form-control" placeholder="{{ trans('new.address') }}" /><br><hr />
+					<button class="btn btn-primary btn-lg inp pull-left">{{ trans("updpwd.save") }}</button>
 						</div>
 					</div>
 
 				</form>
 			</div>
 					<!-- rent -->
-			 <div id="rent" style="display:none;">
+			 <div id="rent" class="disDiv">
 				<form action="update/rent/{{ $id }}" method="POST">
 				   <div class="panel panel-default">
 					<div class="panel-body">
@@ -154,17 +148,14 @@
 						<option value="1">{{ trans('new.rent') }}</option>
 						<option value="2">{{ trans('new.buy') }}</option>
 					</select><br>
-					<center>
-					<button class="btn btn-primary btn-md inp ">{{ trans("updpwd.save") }}</button>
-					<a class="btn btn-default btn-md cancel" data="#rent">{{ trans("updpwd.cancel") }}</a>
-					</center>
+					<button class="btn btn-primary btn-lg inp pull-left">{{ trans("updpwd.save") }}</button>
 					</div>
 				  </div>
 				  </div>
 				</form>
 			</div>
 					<!-- type -->
-			 <div id="type" style="display:none;">
+			 <div id="type" class="disDiv">
 				<form action="update/type/{{ $id }}" method="POST">
 				   <div class="panel panel-default">
 					<div class="panel-heading" style="background-color:white;"><b>{{ trans("dashboard.edit") }} {{ trans("new.type") }}</b></div>
@@ -182,16 +173,13 @@
 					</select>
 				    </div>
 					<br>
-					<center>
-					<button class="btn btn-primary btn-md inp ">{{ trans("updpwd.save") }}</button>
-					<a class="btn btn-default btn-md cancel" data="#type">{{ trans("updpwd.cancel") }}</a>
-					</center>
+					<button class="btn btn-primary btn-lg inp pull-left">{{ trans("updpwd.save") }}</button>
 					</div>
 				  </div>
 				</form>
 			</div>
 					<!-- price -->
-			 <div id="price" style="display:none;">
+			 <div id="price" class="disDiv">
 				<form action="update/price/{{ $id }}" method="POST">
 				   <div class="panel panel-default">
 					<div class="panel-heading" style="background-color:white;"><b>{{ trans("dashboard.edit") }} {{ trans("new.price") }}</b></div>
@@ -205,16 +193,13 @@
 					</div>
 				    </div>
 					<br>
-					<center>
-					<button class="btn btn-primary btn-md inp ">{{ trans("updpwd.save") }}</button>
-					<a class="btn btn-default btn-md cancel" data="#price">{{ trans("updpwd.cancel") }}</a>
-					</center>
+					<button class="btn btn-primary btn-lg inp pull-left">{{ trans("updpwd.save") }}</button>
 					</div>
 				  </div>
 				</form>
 			</div>
 					<!-- surface -->
-			 <div id="surface" style="display:none;">
+			 <div id="surface" class="disDiv">
 				<form action="update/surface/{{ $id }}" method="POST">
 				   <div class="panel panel-default">
 					<div class="panel-heading" style="background-color:white;"><b>{{ trans("dashboard.edit") }} {{ trans("new.surface") }}</b></div>
@@ -229,17 +214,14 @@
 					</div>	
 				    </div>
 					<br>
-					<center>
-					<button class="btn btn-primary btn-md inp ">{{ trans("updpwd.save") }}</button>
-					<a class="btn btn-default btn-md cancel" data="#surface">{{ trans("updpwd.cancel") }}</a>
-					</center>
+					<button class="btn btn-primary btn-lg inp pull-left">{{ trans("updpwd.save") }}</button>
 
 					</div>
 				  </div>
 				</form>
 			</div>
 					<!-- phone -->
-			 <div id="phone" style="display:none;">
+			 <div id="phone" class="disDiv">
 				<form action="update/phone/{{ $id }}" method="POST">
 				   <div class="panel panel-default">
 					<div class="panel-heading" style="background-color:white;"><b>{{ trans("dashboard.edit") }} {{ trans("new.phone") }}</b></div>
@@ -252,16 +234,13 @@
 					</div>
 				  </div>
 					<br>
-					<center>
-					<button class="btn btn-primary btn-md inp ">{{ trans("updpwd.save") }}</button>
-					<a class="btn btn-default btn-md cancel" data="#phone">{{ trans("updpwd.cancel") }}</a>
-					</center>
+					<button class="btn btn-primary btn-lg inp pull-left">{{ trans("updpwd.save") }}</button>
 					</div>
 				  </div>
 				</form>
 			</div>
 					<!-- City -->
-			 <div id="city" style="display:none;">
+			 <div id="city" class="disDiv">
 				<form action="update/city/{{ $id }}" method="POST">
 				   <div class="panel panel-default">
 					<div class="panel-heading" style="background-color:white;"><b>{{ trans("dashboard.edit") }} {{ trans("new.city") }}</b></div>
@@ -276,17 +255,14 @@
 					</select>
 				    </div>
 					<br>	
-					<center>
-					<button class="btn btn-primary btn-md inp ">{{ trans("updpwd.save") }}</button>
-					<a class="btn btn-default btn-md cancel" data="#city">{{ trans("updpwd.cancel") }}</a>
-					</center>
+					<button class="btn btn-primary btn-lg inp pull-left">{{ trans("updpwd.save") }}</button>
 				
 					</div>
 				  </div>
 				</form>
 			</div>
 					<!-- carac -->
-			 <div id="carac" style="display:none;">
+			 <div id="carac" class="disDiv">
 				<form action="update/carac/{{ $id }}" method="POST">
 				   <div class="panel panel-default">
 					<div class="panel-heading" style="background-color:white;"><b>{{ trans("dashboard.edit") }} {{ trans("new.carac") }}</b></div>
@@ -296,17 +272,14 @@
 					<label><input type="checkbox" name="balc" value="1" @if($retail->balc) checked @endif >  {{ trans('new.balc') }}</label><br>
 					<label><input type="checkbox" name="gar" value="1" @if($retail->gar) checked @endif > {{ trans('new.gara') }}</label><br>
 					<label><input type="checkbox" name="furn" value="1" @if($retail->furn) checked @endif > {{ trans('new.furn') }}</label><br>
-					<center>
-					<button class="btn btn-primary btn-md inp">{{ trans("updpwd.save") }}</button>
-					<a class="btn btn-default btn-md cancel" data="#carac">{{ trans("updpwd.cancel") }}</a>
-					</center>
+					<button class="btn btn-primary btn-lg inp pull-left">{{ trans("updpwd.save") }}</button>
 					</div>
 				
 				  </div>
 				</form>
 			</div>
 					<!-- pictures -->
-			 <div id="pictures" style="display:none;">
+			 <div id="pictures" class="disDiv">
 				<form action="update/pictures/{{ $id }}" method="POST">
 				   <div class="panel panel-default">
 					<div class="panel-heading" style="background-color:white;"><b>{{ trans("dashboard.edit") }} {{ trans("new.pictures") }}</b></div>
@@ -323,16 +296,13 @@
 					</div>
 					</div>
 					<div class="panel-footer" style="background-color:white;">
-					<center>
-					<button class="btn btn-primary btn-md inp">{{ trans("updpwd.save") }}</button>
-					<a class="btn btn-default btn-md cancel" data="#pictures">{{ trans("updpwd.cancel") }}</a>
-					</center>
+					<button class="btn btn-primary btn-lg inp pull-left">{{ trans("updpwd.save") }}</button>
 					</div>		
 				  </div>
 				</form>
 			</div>
 					<! -- nbrooms -->
-			 <div id="nbrooms" style="display:none;">
+			 <div id="nbrooms" class="disDiv">
 				<form action="update/nbrooms/{{ $id }}" method="POST">
 				   <div class="panel panel-default">
 					<div class="panel-heading" style="background-color:white;"><b>{{ trans("dashboard.edit") }} {{ trans("new.piece") }}</b></div>
@@ -358,10 +328,7 @@
 					</div>	
 				    </div>	
 				<br>	
-					<center>
-					<button class="btn btn-primary btn-md inp ">{{ trans("updpwd.save") }}</button>
-					<a class="btn btn-default btn-md cancel" data="#nbrooms">{{ trans("updpwd.cancel") }}</a>
-					</center>
+					<button class="btn btn-primary btn-lg inp pull-left">{{ trans("updpwd.save") }}</button>
 					</div>
 				  </div>
 				</form>
@@ -370,7 +337,7 @@
 
 				<!-- zipcode -->
 
-			 <div id="zipcode" style="display:none;">
+			 <div id="zipcode" class="disDiv">
 				<form action="update/zipcode/{{ $id }}" method="POST">
 				   <div class="panel panel-default">
 					<div class="panel-heading" style="background-color:white;"><b>{{ trans("dashboard.edit") }} {{ trans("new.zipcode") }}</b></div>
@@ -379,33 +346,24 @@
 						<input type="text" class="form-control" name="zipcode" placeholder="{{trans('new.zipcode') }}" />
 						</div>	
 					<br>	
-					<center>
-					<button class="btn btn-primary btn-md inp ">{{ trans("updpwd.save") }}</button>
-					<a class="btn btn-default btn-md cancel" data="#zipcode">{{ trans("updpwd.cancel") }}</a>
-					</center>
+					<button class="btn btn-primary btn-lg inp pull-left">{{ trans("updpwd.save") }}</button>
 					</div>
 				  </div>
 				</form>
 			</div>
 	
 				<!-- retail add info -->	
-			 <div id="addinfo" style="display:none;">
+			 <div id="addinfo" class="disDiv">
 				<form action="update/info/{{ $id }}" method="POST">
 				   <div class="panel panel-default">
 					<div class="panel-heading" style="background-color:white;"><b>{{ trans("dashboard.edit") }} {{ trans("new.info") }}</b></div>
 					<div class="panel-body">
 						<!-- retail add data -->
 					<textarea class="form-control" rows="8" style="resize:none;" name="info" placeholder="{{ trans('new.info') }}"></textarea><br>	
-					<center>
-					<button class="btn btn-primary btn-md inp">{{ trans("updpwd.save") }}</button>
-					<a class="btn btn-default btn-md cancel" data="#addinfo">{{ trans("updpwd.cancel") }}</a>
-					</center>
+					<button class="btn btn-primary btn-lg inp pull-left">{{ trans("updpwd.save") }}</button>
 					</div>
 				  </div>
 				</form>
 			</div>
-		
-		</div>
-	</div>	
-	</center>
+	</div>
 @endsection

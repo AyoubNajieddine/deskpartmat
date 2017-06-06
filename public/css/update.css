@@ -1,0 +1,44 @@
+#sideLeft {
+	width:62%;
+	margin-left:5%;
+}
+#sideRight {
+	width:28%;
+	margin-left:2%;
+}
+#hdInf .btn {
+	border:1px solid #006cc9;
+	border-radius:3px;
+	
+}
+.frmData {
+	display:none;
+}
+.chev_link {
+    position: absolute;
+    top: 38%;
+    left: 10px;
+}
+#updpartma_menu table {
+	border-radius:5px;
+}
+#updpartma_menu h5 {
+	margin:0;
+}
+#updpartma_menu table tr {
+	cursor:pointer;
+}
+.edit_opt {
+	position:absolute;
+	top:0;
+	right:0;
+	left:0;
+	bottom:0;
+	
+}
+.disDiv {
+	display:none;
+}
+.addClsShow {
+	display:block !important;
+}
