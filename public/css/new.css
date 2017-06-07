@@ -1,0 +1,35 @@
+
+.fileUpld {
+   position: relative;
+   overflow: hidden;
+   margin: 10px;
+   font-size: 18px;
+   width:53px !important;
+   height:42px !important;
+   float:right;
+}
+.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+.upl_list {
+    margin:3px;
+
+}
+.thumb_div {
+	position:relative;
+	float:right;
+}
+.thumb_cls {
+	position:absolute;
+	right:0;
+	top:0;
+	margin-top:-1px;
+	margin-right:-1px;
+}

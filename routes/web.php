@@ -34,6 +34,9 @@ Route::group(["middleware" => "auth"], function(){
 			return view("retail.frmdyn")->with(["tp"=>$tp]);
 	});
 	Route::post("/delret", "retailCont@delRetail");
+	Route::post("/addRetail", "retailCont@newRetail");
 	Route::get("/updret/{id}", "retailCont@updrtl");
+	Route::post("/updret/update/{elem}/{id}","retailCont@updateRetail");
+	Route::post("/upld", "pictCont@addPics");
 });
 

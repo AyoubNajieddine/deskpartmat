@@ -1,7 +1,8 @@
 @extends("layouts.master")
 
 @section("content")
-<script src="{{ URL::to('js/new.js') }}"></script>	
+<script src="{{ URL::to('js/new.js') }}"></script>
+<link type="text/css" href="/css/new.css" rel="stylesheet" />	
 			<center>
 <div id="newpart"  style="width:500px;margin-bottom:50px;">
 				<form action="/addRetail" method="POST">

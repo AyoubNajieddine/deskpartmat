@@ -48,7 +48,7 @@ class retailCont extends Controller
 		}
 		}
 		if($ret == true){
-			return redirect("/dashboard");
+			return redirect("/list");
 		}	
 	}
 	function updRetail(Request $req){
@@ -141,6 +141,7 @@ class retailCont extends Controller
 		"phone" => "size:10|numeric",
 		"price" => "min:0",
 		"surface" => "min:0",
+		"info" => "required",
 		]);
 		if($validator->fails() == false){
 				// Saving the Object	

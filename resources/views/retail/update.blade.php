@@ -129,7 +129,7 @@
 				   <div class="panel panel-default">
 						<div class="panel-heading" style="background-color:white;"><b>{{ trans("dashboard.edit") }} {{ trans("new.address") }}</b></div>
 						<div class="panel-body">
-					<input type="text" name="adresse_retail" class="form-control" placeholder="{{ trans('new.address') }}" /><br><hr />
+					<input type="text" name="adresse_retail" class="form-control" placeholder="{{ trans('new.address') }}" /><br>
 					<button class="btn btn-primary btn-lg inp pull-left">{{ trans("updpwd.save") }}</button>
 						</div>
 					</div>
@@ -137,7 +137,7 @@
 				</form>
 			</div>
 					<!-- rent -->
-			 <div id="rent" class="disDiv">
+			 <div id="rent" class="disDiv addClsShow">
 				<form action="update/rent/{{ $id }}" method="POST">
 				   <div class="panel panel-default">
 					<div class="panel-body">

@@ -13,7 +13,7 @@
 		<div id="menuDrop">
 			<div id="idArrow"></div>
 			<ul style="padding-right:1px;">
-				<li><a href="/dashboard">{{ trans("header.myhouses") }}</a></li> <!-- myHouses -->
+				<li><a href="/list">{{ trans("header.myhouses") }}</a></li> <!-- myHouses -->
 				<li><a href="#sv">{{ trans("header.saved") }}</a></li> <!-- SavedHouses -->
 				<li><a href="settings">{{ trans("header.settings") }}</a></li> <!-- Settings -->
 				<li><a href="#ctn">{{ trans("header.cont_us") }}</a></li> <!-- ContactUs -->

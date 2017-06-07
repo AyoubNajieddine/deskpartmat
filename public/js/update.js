@@ -15,4 +15,28 @@ $(document).ready(function(){
 		$(".disDiv").removeClass("addClsShow");
 		$(data).addClass("addClsShow");
 	});
+  $("form").submit(function(event){
+	event.preventDefault();
+	param = $(this).serialize();
+	action  = $(this).attr("action");
+	method  = $(this).attr("method");
+	$.ajax({
+	method:method, 
+	url:action,
+	data:param,
+	success:function(ret){
+		if(ret.length != 0){
+		prop = Object.keys(ret)[0];
+		$(".alert").show();
+		$(".alert ul").html("<li>"+ret[prop]+"</li>");
+		}
+		else {
+			$(".alert").hide();
+			document.location = "/list";
+		}
+	}
+  	});
+	//console.log($(this).serializeArray());
+  	
+  });
 });
