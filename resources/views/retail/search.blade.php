@@ -8,7 +8,7 @@
 			<span class="glyphicon glyphicon-search"></span><span>{{ trans('home.search_tit') }}</span><br>
 			<small>{{ trans('home.title') }}</small><br><br>
 			
-			<form action="/search" >
+			<form action="search" >
 				  <div class="form-group">
 					<select name="ret_city" class="form-control">							
 					<option value="-1">{{ trans('new.city') }}</option>

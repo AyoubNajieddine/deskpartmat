@@ -8,7 +8,7 @@
 			<span class="glyphicon glyphicon-search"></span><span>{{ trans('home.search_tit') }}</span><br>
 			<small>{{ trans('home.title') }}</small><br><br>
 			
-			<form action="/search" >
+			<form action="search" >
 				  <div class="form-group">
 					<select name="ret_city" class="form-control">							
 					<option value="-1">{{ trans('new.city') }}</option>
@@ -62,18 +62,21 @@
 	</div>
 	<div class="pull-left" id="sideLtHome">
 		<div class="imgExp">
+		<a href="/search/170/-1/-1" ></a>	
 		<img src="{{ URL::to('icons/casablanca.jpg') }}" />
 		<h1>{{ trans("cities.170") }}<br>
-		<small>5000 {{ trans("dashboard.retail") }}</small>
+		<small>{{ $cntcasa }} {{ trans("dashboard.retail") }}</small>
 		</h1>	
 		</div>
 		<div class="imgExp">
+		<a href="/search/173/-1/-1" ></a>	
 		<img src="{{ URL::to('icons/marrakech.jpg') }}" />	
-		<h1>{{ trans("cities.173") }}<br><small>3400 {{ trans("dashboard.retail") }}</small></h1>	
+		<h1>{{ trans("cities.173") }}<br><small>{{ $cntmara }} {{ trans("dashboard.retail") }}</small></h1>	
 		</div>
 		<div class="imgExp">
+		<a href="/search/171/-1/-1" ></a>	
 		<img src="{{ URL::to('icons/rabat.jpg') }}" />	
-		<h1>{{ trans("cities.171") }}<br><small>200 {{ trans("dashboard.retail") }}</small></h1>	
+		<h1>{{ trans("cities.171") }}<br><small>{{ $cntraba }} {{ trans("dashboard.retail") }}</small></h1>	
 		</div>
 	</div>
 @endsection

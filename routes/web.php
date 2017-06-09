@@ -13,7 +13,11 @@
 
 Route::get('/', function () {
     $cities = App\city::all();
-    return view('home')->with(["cities" => $cities]);
+		// but also we need to get the number of retails in casablanca,marrakech,rabat
+    $cntcasa = App\RetailInfo::where("city_id","=","170")->count();
+    $cntmara = App\RetailInfo::where("city_id","=","173")->count();
+    $cntraba = App\RetailInfo::where("city_id","=","171")->count();
+    return view('home')->with(["cities" => $cities, "cntcasa"=>$cntcasa, "cntmara" => $cntmara, "cntraba"=>$cntraba]);
 });
 Route::post("/register","userCont@register");
 Route::post("/login",  "userCont@login");
@@ -38,5 +42,6 @@ Route::group(["middleware" => "auth"], function(){
 	Route::get("/updret/{id}", "retailCont@updrtl");
 	Route::post("/updret/update/{elem}/{id}","retailCont@updateRetail");
 	Route::post("/upld", "pictCont@addPics");
+	Route::post("/delpic", "pictCont@delPic");
 });
 

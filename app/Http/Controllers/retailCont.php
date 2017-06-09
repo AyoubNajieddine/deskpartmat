@@ -57,7 +57,11 @@ class retailCont extends Controller
 	function delRetail(Request $req){
 		// deleting retail
 		$id = $req->id; // getting the id
-		retail::destroy(["id"=> $id]);	
+		// we need to delete pictures first
+		$ret = retail::find($id);	
+		$ret->pics()->delete();
+		$ret->delete();
+		
 	}
 	function viewRetail(){
 		

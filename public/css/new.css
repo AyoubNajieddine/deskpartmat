@@ -1,4 +1,3 @@
-
 .fileUpld {
    position: relative;
    overflow: hidden;
@@ -24,7 +23,7 @@
 }
 .thumb_div {
 	position:relative;
-	float:right;
+	//float:right;
 }
 .thumb_cls {
 	position:absolute;

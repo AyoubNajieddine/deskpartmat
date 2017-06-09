@@ -13,6 +13,7 @@
 		@include("layouts.header")
 		<div class="mycont" id="wrapper" dir="rtl">
 		@yield("content")
-		</div>		
+		</div>	
+		@include("layouts.footer")
 	</body>
 </html>

@@ -2,6 +2,7 @@
 
 @section("content")
 <link href="/css/update.css" type="text/css" rel="stylesheet" >
+<link href="/css/new.css" type="text/css" rel="stylesheet" >
 <script src="/js/update.js"></script>
 	<div id="headUpd" style="overflow:auto;">	
 	<a class="btn btn-md pull-left" style="">Back<span class="glyphicon glyphicon-chevron-left"></span></a>
@@ -284,20 +285,18 @@
 				   <div class="panel panel-default">
 					<div class="panel-heading" style="background-color:white;"><b>{{ trans("dashboard.edit") }} {{ trans("new.pictures") }}</b></div>
 					<div class="panel-body">
-						<!-- pictures data -->
-						<?php $counter = 0; ?>
-							@foreach($pics as $pic)
-						<div class="thumb_div {{ $counter }}" ><span class="glyphicon glyphicon-remove-sign thumb_cls text-danger" target-data=".thumb_div {{ $counter }}"></span><img class="img-thumbnail upl_list" width="99px" height="100px" src="/thumbs/{{ $pic->picture_name }}"/></div>	
-						<?php $counter = $counter+1; ?>
-							@endforeach	
-					<div class="fileUpld btn btn-success btn-lg">
+					<div class="fileUpld btn btn-success btn-lg pull-right">
 						<span class="glyphicon glyphicon-camera" dir="ltr"></span>
 						<input type="file" name="img[]" class="upload" id="upld" cs="{{ csrf_token() }}" required/>
 					</div>
+						<!-- pictures data -->
+						<?php $counter = 0; ?>
+							@foreach($pics as $pic)
+						<div class="thumb_div {{ $counter }} pull-right" ><span class="glyphicon glyphicon-remove-sign thumb_cls text-danger" target="{{ $pic->picture_name }}" target-data=".thumb_div {{ $counter }}"></span><img class="img-thumbnail upl_list" width="99px" height="100px" src="/thumbs/{{ $pic->picture_name }}"/></div>	
+						<?php $counter = $counter+1; ?>
+							@endforeach	
+					<button style="" class="btn btn-primary btn-lg inp">{{ trans("updpwd.save") }}</button>
 					</div>
-					<div class="panel-footer" style="background-color:white;">
-					<button class="btn btn-primary btn-lg inp pull-left">{{ trans("updpwd.save") }}</button>
-					</div>		
 				  </div>
 				</form>
 			</div>

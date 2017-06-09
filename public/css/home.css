@@ -66,6 +66,13 @@
 	right:20px;
 	bottom:5px;	
 }
+.imgExp a {
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+}
 .imgExp small {
 	color:white;
 }

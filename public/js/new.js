@@ -29,7 +29,7 @@ function addImage(src, name, len){
 			   adding picture division view
 			   so we can delete theme 
 			*/
-		$("#img_div").append("<div class='thumb_div '"+len+" ><span class='glyphicon glyphicon-remove-sign thumb_cls text-danger' target-data='.thumb_div "+len+"' ></span><img class='img-thumbnail upl_list' width='100px' height='100px' src='"+src+"'></div>");
+		$("#img_div").append("<div class='thumb_div pull-right'"+len+" ><span class='glyphicon glyphicon-remove-sign thumb_cls text-danger' target='"+name+"' target-data='.thumb_div "+len+"' ></span><img class='img-thumbnail upl_list' width='100px' height='100px' src='"+src+"'></div>");
 		
 }
 function uploadFiles(){
@@ -41,19 +41,6 @@ function uploadFiles(){
 		token = $("meta[name=csrf-token]").attr("content"); // is the value of csrf token
 		data.append("_token", token);
 		data.append("img", obj);
-	//	console.	
-	/*
-
-    url: 'php/upload.php',
-    data: data,
-    cache: false,
-    contentType: false,
-    processData: false,
-    type: 'POST',
-    success: function(data){
-        alert(data);
-    }
-	*/
 		$.ajax({
 		    url: '/upld',
 		    data: data,
@@ -67,17 +54,19 @@ function uploadFiles(){
 				len = $(".thumb_div").length;
 				addImage(src, res, len);
 				}
+			reader.readAsDataURL(obj);
 			}
 			});
 	
-		reader.readAsDataURL(obj);
 		});
 }
 function delThumb(){
 	$(document).on('click','.thumb_cls',function(){
+		token = $("meta[name=csrf-token]").attr("content");
 		elem =  $(this)[0].parentElement;
 		src = $(this).attr("target");
 		$(elem).remove();
-		$.get("/retail/delpic/"+src);// we still can do post method
+		$("input[value='"+src+"']").remove();
+		$.post("/delpic", {_token:token,src:src});// we still can do post method
 	});
 }

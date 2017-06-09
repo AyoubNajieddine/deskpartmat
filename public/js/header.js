@@ -10,7 +10,21 @@ $("#header").ready(function(){
 	updName();
 	updPassword();
 	updEmail();
+	newsearch();
+	$("#null").css("height", $(document).height()+"px");
 });
+function newsearch(){
+	$("form[action=search]").submit(function(event){
+	event.preventDefault();
+	sel = $(this).find("select");
+	//console.log(sel[0]);
+	//CityVal = sel[0].value;
+	//rentType= sel[1].value;
+	//retailType = sel[2].value; 
+	window.location = "/search/"+sel.get(0).value+"/"+sel.get(2).value+"/"+sel.get(1).value;
+	
+});
+}
 function loadLogin(){
 	$('a[href=login]').click(function(event){
 		event.preventDefault();
