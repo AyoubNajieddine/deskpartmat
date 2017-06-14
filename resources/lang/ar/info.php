@@ -11,4 +11,6 @@ return array(
 	"save" => "تسجيل",
 	"imprimer" => "طباعة",
 	"reportRet" => "التبليغ عن هذا العقار",
+	"messHold" => "محتوى الرسالة",
+	"sendMB" => "ارسل",
 );

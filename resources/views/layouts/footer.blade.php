@@ -1,12 +1,15 @@
+<script type="text/javascript" src="/js/footer.js"></script>
 <link href="/css/footer.css" type="text/css" rel="stylesheet" >
-<script type="text/javacript" src="js/footer.js"></script>
 <div id="footer" dir="rtl">
 		<div id="subs">
 	<center>
 			<h1>{{ trans("home.subButton") }} ,<small>{{ trans("home.subinfo") }}</small></h1>
+			<form action="subsfrm" method="post">
 			<input type="text" class="form-control" name="email" placeholder="{{ trans('login.user_holder') }}"><button class="btn btn-lg subbtn"><span class="glyphicon glyphicon-envelope"></span> {{ trans("home.subButton") }}</button><br>
 			<br>
-			<span id="notsub"><input type="checkbox" name="notify">{{ trans("home.emailme") }}</span>
+			<span id="notsub"><input type="checkbox" id="notify" name="notify">{{ trans("home.emailme") }}</span>
+			<br><div class="alrt"></div>
+			</form>
 	</center>
 		</div>
 		<div id="links">

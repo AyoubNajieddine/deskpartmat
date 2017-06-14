@@ -24,6 +24,7 @@ Route::post("/login",  "userCont@login");
 Route::get("/logout", "userCont@logout");
 Route::get("/search/{city}/{type}/{rent}", "SearchCont@search");
 Route::get("/info/{id}", "retailCont@getRetailInfo");
+Route::post("/subs/", "subsCont@addSub");
 Route::group(["middleware" => "auth"], function(){
 	Route::post("/nm", "userCont@updName");
 	Route::post("/eml", "userCont@updEmail");	
@@ -44,4 +45,5 @@ Route::group(["middleware" => "auth"], function(){
 	Route::post("/upld", "pictCont@addPics");
 	Route::post("/delpic", "pictCont@delPic");
 });
+	Route::post("/sendMesg/{id}", "messgCont@sendMessage");
 

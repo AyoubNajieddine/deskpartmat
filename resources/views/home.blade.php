@@ -40,10 +40,12 @@
 	</div>
 	<div class="infos">
 		<div id="subBox">
-			<form action="subs" method="post">
+			<form action="subsfrm" method="post">
 				<h3>{{ trans("home.subs") }}</h3>
-				<input class="form-control" name="email_sub" placeholder="{{ trans('login.user_holder') }}">
-				<button class="btn btn-md btn-primary">{{ trans("home.subButton") }}</button>
+				<input class="form-control" type="text" name="email" placeholder="{{ trans('login.user_holder') }}">
+				<button class="btn btn-md btn-primary">{{ trans("home.subButton") }}</button><br>
+				<span id="notsub"><input type="checkbox" id="notify" name="notify" style="width:auto;">{{ trans("home.emailme") }}</span>
+			<br><div class="alrt"></div>
 			</form>
 		</div>
 		<div class="infoBox">	

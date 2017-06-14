@@ -76,7 +76,7 @@
 					<div class="panel-body">
 					<h2 align="center" style="color:#006cc9;"><strong>{{ $infos->price }} {{ trans("new.currency") }}</strong></h2><hr />	
 					<button class="btn btn-lg btn-success fl" style="margin-bottom:10px;">{{ trans("new.call")}}</button>
-					<button class="btn btn-lg btn-link fl" style="margin-bottom:10px;">{{ trans("info.sendM") }}</button><br>
+					<button id="sendM" class="btn btn-lg btn-link fl" style="margin-bottom:10px;">{{ trans("info.sendM") }}</button><br>
 					<center><a class="fl">{{ trans("info.reportRet") }}</a></center>
 					</div>
 					</div>
@@ -85,10 +85,6 @@
 					<div class="panel panel-default">
 						<div class="panel-heading"><span class="glyphicon glyphicon-user"></span><a style="color:#333;" href="/viewusr/{{ $userInfo->id }}"><strong> {{ $userInfo->full_name}}</strong></a><span id="starts"><strong></strong></span></div>
 								<?php  $count = $userInfo->retails->count(); ?>
-						<!-- 
-					Link to Profile of the user;
-					Date Post
-						 -->
 						<div class="panel-body">
 							<span class="glyphicon glyphicon-calendar"></span> {{ $infos->created_at }}<br>
 							@if($count > 0)
@@ -102,6 +98,36 @@
 
 			</div>
 		</div>	
+					<?php 
+						/*
+						*
+						*
+						*
+						*
+						*
+						*/
+					?>	
+		
+	<div id="messgfrm" class="frm" dir="rtl">
+		<a class="pull-left"><span class="glyphicon glyphicon-remove-sign"></span></a>
+		<h3 style="margin:inherit" class="pull-right">{{ trans("info.sendM") }}</h3>
+		<br><hr />
+		<div class="alert alert-danger hideElem">
+		</div>	
+		<form action="/sendMesg/{{ $infos->user_id }}"  id="sendMForm" method="POST">
+			<textarea class="form-control" rows="8" style="resize:none;" name="message" placeholder="{{ trans('info.messHold') }}"></textarea><br>
+			<button class="btn btn-lg  btn-primary">{{ trans("info.sendMB") }}</button><br><br>
+		</form>
+	</div>
+					<?php 
+						/*
+						*
+						*
+						*
+						*
+						*
+						*/
+					?>	
 @endsection
 
 
